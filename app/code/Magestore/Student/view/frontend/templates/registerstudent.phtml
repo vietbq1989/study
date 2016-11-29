@@ -1,0 +1,51 @@
+<h1><?php echo $this->getHelloWorldTxt(); ?></h1>
+<div id="aaa"></div>
+<div>
+    <form name="login_form" id="login_form">
+        <div><?php __('Register From')?></div>
+        <div class="form-group">
+            <div class="">
+                <label class="required" for="firstname"><span><?php echo __('First Name') ?></span><em>*</em></label>
+                <input type="text" placeholder="<?php echo __('First Name') ?>" class="form-control input-text" data-validate="{required:true}" title="First Name" name="firstname" id="firstname" value="">
+            </div>
+            <div class="">
+                <label class="required" for="lastname"><span><?php echo __('Last Name') ?></span><em>*</em></label>
+                <input type="text" placeholder="<?php echo __('Last Name') ?>"  class="form-control input-text required-entry" title="Last Name"  name="lastname" id="lastname" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="">
+                <label class="required" for="firstname"><span><?php echo __('Email') ?></span><em>*</em></label>
+                <input type="text" placeholder="<?php echo __('Email') ?>" class="form-control input-text" data-validate="{required:true}" title="Email" name="email" id="email" value="">
+            </div>
+        </div>
+        <div class="buttons-set">
+            <button type="submit" title="<?php echo __('Save'); ?>" class="button button-config action primary">
+                    <span>
+                        <?php echo __('Save') ?>
+                    </span>
+            </button>
+            <p class="back-link">
+                <a href="javascript:history.go(-1)">
+                    <button type="button" title="<?php echo __('Back'); ?>" class="button button-config action primary" onclick="javascript:history.go(-1)">
+                            <span>
+                                <?php echo __('Back') ?>
+                            </span>
+                    </button>
+                </a>
+            </p>
+        </div>
+    </form>
+</div>
+<script>
+
+//    $('#login_form').validation();
+    require([
+        "jquery",
+        "Magestore_Student/js/student"
+    ], function ($) {
+        console.log('kaka');
+        $('#aaa').student();
+        $('#aaa').student('studentregister',{'a':3,'b':2});
+    })
+</script>

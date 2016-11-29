@@ -1,0 +1,33 @@
+<h1><?php echo $this->getHelloWorldTxt(); ?></h1>
+
+<div id="list-product-view" class="hide-popup popup-for-right" data-bind="scope:'list_product'">
+    <div class="form-group">
+        <div class="">
+            <label class="required" for="firstname"><span><?php echo __('Price') ?></span><em>*</em></label>
+            <input type="text" data-bind="value:price" placeholder="<?php echo __('Price') ?>" class="form-control input-text" data-validate="{required:true}" title="Price" name="price" id="price" value="">
+        </div>
+        <div class="">
+            <label class="required" for="lastname"><span><?php echo __('Qty') ?></span><em>*</em></label>
+            <input type="text" data-bind="value:qty" placeholder="<?php echo __('Qty') ?>"  class="form-control input-text required-entry" title="Qty"  name="qty" id="qty" value="">
+        </div>
+        <div class="">
+            <label class="required" for="total"><span><?php echo __('Total') ?></span><em>*</em></label>
+            <span data-bind="text:total"></span>
+        </div>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+{
+"#list-product-view": {
+   "Magento_Ui/js/core/app": {
+          "components" : {
+             "list_product": {
+                  "component": "Magestore_Knockoutstudy/js/listproduct",
+                   "displayArea": "list_product"
+              }
+          }
+       }
+   }
+}
+</script>
+</div>
